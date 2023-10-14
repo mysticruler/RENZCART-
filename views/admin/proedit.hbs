@@ -1,0 +1,45 @@
+<div class="producteditpage">
+  <div class="adddc">
+  <form method="post" action="" enctype="multipart/form-data">
+  <div class="form-group">
+    <label class="addC"for="formGroupExampleInput">Products</label><br><br>
+    <label class="headd"for="formGroupExampleInput">Category</label>
+    <select class="form-select" aria-label="Default select example" name="cates">
+  <option  >Choose Category</option>
+      {{#each propro}}
+       <option value="{{this._id}}" >{{this.category}}</option>
+      {{/each}}
+</select>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Sub category</label>
+    <select class="form-select" aria-label="Default select example" name="subcates">
+  <option  >Choose Subcategory</option>
+      {{#each subsub}}
+       <option value="{{this._id}}" >{{this.subcategory}}</option>
+      {{/each}}
+</select>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Product Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Products" name="pname" value={{itemitem.productname}}>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Price</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Price" name="pricee" value={{itemitem.price}}>
+  </div><br><br>
+   <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Quantity</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Quantity" name="qty" value={{itemitem.quantity}}>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd" for="formGroupExampleInput2">Description</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Description" name="dessss" value={{itemitem.description}}>
+  </div><br><br>
+  <div>
+  <label for="formFileLg" class="headd">Image</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file" name="picture" value={{itemitem.image}}>
+</div><br>
+<button type="submit" class="btn btn-primary btn-lg">submit</button>
+</form>
+</div>

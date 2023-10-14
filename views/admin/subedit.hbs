@@ -1,0 +1,25 @@
+
+<div class="subedit">
+<form method="post" action="">
+  <div class="form-group">
+    <label class="addC" for="formGroupExampleInput">Add Sub Category</label><br><br>
+    <label class="headd" for="formGroupExampleInput">Parent Category</label>
+    <select  name="parC" class="form-select" aria-label="Default select example">
+      
+      {{#each pro}}
+      <option value="{{this._id}}" >{{this.category}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <br><div>
+    <label>Sub-Category</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter sub-category" name="subC" value={{subb.subcategory}}>
+  </div>
+  
+<br><br>
+  
+<button type="submit" class="btn btn-primary btn-lg">submit</button>
+</form>
+
+<a href="/category">HOME</a>
+</div>

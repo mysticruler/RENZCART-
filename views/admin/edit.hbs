@@ -1,0 +1,29 @@
+<div class="editedit"><form style="padding-top: 50px;padding-left: 550px;" method="post" action="" enctype="multipart/form-data">
+
+<div class="editpage">
+  
+  <div class="adddc">
+  <form method="post" action="" enctype="multipart/form-data">
+  <div class="form-group">
+    <label class="addC"for="formGroupExampleInput">Add Category</label><br><br>
+    <label class="headd"for="formGroupExampleInput">Category Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Category" name="cate" value={{outputM.category}}>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd" for="formGroupExampleInput2">Description</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Description" name="dess" value={{outputM.description}}>
+  </div><br><br>
+  <div>
+  <label for="formFileLg" class="headd">Image</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file" name="image" value={{outputM.image}}>
+  <br>
+  <br>
+  <img src="/images/{{outputM.image}}" width="100" height="100"><br>
+</div><br>
+<button type="submit" class="btn btn-primary btn-lg">submit</button>
+</form>
+</div>
+</form>
+</div>
+
+<a href="/category">HOME</a>

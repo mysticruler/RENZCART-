@@ -1,0 +1,52 @@
+<div class="subsub">
+   <form method="post" action="">
+  <div class="form-group">
+    <label class="addC"for="formGroupExampleInput">Add Sub Category</label><br><br>
+    <label class="headd"for="formGroupExampleInput">Parent Category</label>
+    
+    <select  name="parC" class="form-select" aria-label="Default select example" style="">
+      <option value="" >Click here </option>
+      {{#each cate}}
+       <option value="{{this._id}}" >{{this.category}}</option>
+      {{/each}}
+    </select>
+  
+  </div>
+  <br><div>
+    <label>Sub-Category</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter sub-category" name="subC">
+  </div>
+  
+<br><br>
+  
+<button type="submit" class="btn btn-primary btn-lg">submit</button>
+</form>
+
+<br><br><br>
+<div class="subdissc">
+<label for="formFileLg" class="addC">View Sub-category</label>
+<table class="table" method="post" action="">
+  <thead>
+    <tr>
+      <th scope="col">Parent Category</th>
+      <th scope="col">Sub Category</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  {{#each sub}}
+  <tbody>
+    <tr>
+      <td>{{this.joinCategory.category}}</td>
+      <td>{{this.subcategory}}</td>
+      <td><a href="/subedit/{{this._id}}"><button type="button" class="btn btn-primary">Edit</button></a></td>
+      <td><a href="/sub-category/{{this._id}}"><button type="button" class="btn btn-secondary">Delete</button></a></td>
+    </tr>
+   {{/each}}
+    
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<a href="/category">HOME</a>

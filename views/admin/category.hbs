@@ -1,0 +1,48 @@
+<div class="adminpage">
+  <div class="addddc">
+  <form method="post" action="" enctype="multipart/form-data">
+  <div class="form-group">
+    <label class="addC"for="formGroupExampleInput">Add Category</label><br><br>
+    <label class="headd"for="formGroupExampleInput">Category Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Category" name="cate">
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd" for="formGroupExampleInput2">Description</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Description" name="dess">
+  </div><br><br>
+  <div>
+  <label for="formFileLg" class="headd">Image</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file" name="img">
+</div><br>
+<button type="submit" class="btn btn-primary btn-lg">submit</button>
+</form>
+</div>
+<br><br>
+<div class="dissc">
+<label for="formFileLg" class="addC">View Category</label>
+<table class="table" method="post" action="">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  {{#each output}}
+  <tbody>
+    <tr>
+      <td>{{this.category}}</td>
+      <td>{{this.description}}</td>
+      <td><img src="images/{{this.image}}" width="100" height="100"></td>
+      <td><a href="/edit/{{this._id}}"><button type="button" class="btn btn-primary">Edit</button></a></td>
+      <td><a href="/category/{{this._id}}"><button type="button" class="btn btn-secondary">Delete</button></a></td>
+    </tr>
+   {{/each}}
+    
+  </tbody>
+</table>
+</div>
+</div>
+<a href="/category">HOME</a>

@@ -1,0 +1,78 @@
+<!-- carousel -->
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg" class="d-block w-100" alt="Wild Landscape"/>
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)"></div>
+      <div class="carousel-caption d-none d-sm-block mb-5">
+        <h1  class="mb-4">
+               <marquee width="90%" direction="left" height="100px" scrollamount="10"> <strong id="renn">RENZCART,WHERE THE MIND MEETS ITS NEEDS</strong></strong></marquee>
+              </h1>
+              
+      </div>
+    </div>
+</div>
+
+ <!--Main layout-->
+<main>
+<br><br>
+<div class="container">
+
+  
+<!-- Products -->
+<p style="font-size: xx-large;">NEW PRODUCTS</p>
+  <section>
+  <div class="text-center">
+    <div class="row">
+      {{#each useritems}}
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+            data-mdb-ripple-color="light">
+            <img src="images/{{this.image}}" class="w-100" style="height: 300px;" />
+          </div>
+          
+          <div class="card-body">
+            <a href="/item/{{this._id}}" class="text-reset">
+              <h5 class="card-title mb-2">{{this.productname}}</h5>
+            </a>
+            <a href="" class="text-reset ">
+            </a>
+            <h6 class="mb-3 price">₹{{this.price}}</h6>
+            <h6>{{this.description}}</h6>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+<br>
+{{!-- //ALL CATEGORY// --}}
+<p id="allcate" style="font-size: xx-large" >ALL CATEGORY </p>
+
+  <div class="text-center">
+    <div class="row">
+      {{#each usercata}}
+      <div class="col-lg-3 col-md-6 mb-4">
+        <a href="" class="text-reset">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+            data-mdb-ripple-color="light">
+            <br><br>
+            <img src="images/{{this.image}}" class="w-100" style="height: 300px;">
+          </div>
+          <br><br>
+          <div class="card-body">
+            
+              <h5 class="card-title mb-2">{{this.category}}</h5>
+              <h5 >{{this.description}}</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
+      
+</section>
+   
+</div>
+</main>
+

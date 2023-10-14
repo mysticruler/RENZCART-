@@ -1,0 +1,84 @@
+<div class="productpage">
+  <div class="adddc">
+  <form method="post" action="" enctype="multipart/form-data">
+  <div class="form-group">
+    <label class="addC"for="formGroupExampleInput">Products</label><br><br>
+    <label class="headd"for="formGroupExampleInput">Category</label>
+    <select class="form-select" aria-label="Default select example" name="cates">
+  <option  >Choose Category</option>
+      {{#each cata}}
+       <option value="{{this._id}}" >{{this.category}}</option>
+      {{/each}}
+</select>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Sub category</label>
+    <select class="form-select" aria-label="Default select example" name="subcates">
+  <option  >Choose Subcategory</option>
+      {{#each subcata}}
+       <option value="{{this._id}}" >{{this.subcategory}}</option>
+      {{/each}}
+</select>
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Product Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Products" name="pname">
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Price</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Price" name="pricee">
+  </div><br><br>
+   <div class="form-group">
+    <label class="headd"for="formGroupExampleInput">Quantity</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Quantity" name="qty">
+  </div><br><br>
+  <div class="form-group">
+    <label class="headd" for="formGroupExampleInput2">Description</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Description" name="dessss">
+  </div><br><br>
+  <div>
+  <label for="formFileLg" class="headd">Image</label>
+  <input class="form-control form-control-lg" id="formFileLg" type="file" name="picture">
+</div><br>
+<button type="submit" class="btn btn-primary btn-lg">submit</button>
+</form>
+</div>
+
+
+
+<br><br><br>
+<div class="prodis">
+<label for="formFileLg" class="addC">Product Details</label>
+<table class="table" method="post" action="">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Subcategory</th>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      
+    </tr>
+  </thead>
+  {{#each itemsss}}
+  <tbody>
+    <tr>
+      <td>{{this.itemcategory.category}}</td>
+      <td>{{this.itemcategorysub.subcategory}}</td>
+      <td>{{this.productname}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.quantity}}</td>
+      <td>{{this.description}}</td>
+      <td><img src="images/{{this.image}}" width="100" height="100"></td>
+      <td><a href="/proedit/{{this._id}}"><button type="button" class="btn btn-primary">Edit</button></a></td>
+      <td><a href="/products/{{this._id}}"><button type="button" class="btn btn-secondary">Delete</button></a></td>
+    </tr>
+   {{/each}}
+    
+  </tbody>
+</table>
+</div>
+</div>
+<a href="/category">HOME</a>
